@@ -1,4 +1,5 @@
 const { injectBabelPlugin } = require('react-app-rewired')
+const rewireLess = require('react-app-rewire-less')
 
 module.exports = function override(config, env) {
   config = injectBabelPlugin([
@@ -6,9 +7,15 @@ module.exports = function override(config, env) {
     {
       libraryName: 'antd',
       libraryDirectory: 'es',
-      style: 'css'
+      style: true // change importing css to less
     }
   ], config)
+
+  config = rewireLess.withLoaderOptions({
+    modifyVars: {
+      '@primary-color': '#45EBA5'
+    }
+  })(config, env)
 
   return config
 }
