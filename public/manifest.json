@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "sportify-web-app",
+  "name": "Single page client application for the Sportify app",
   "icons": [
     {
       "src": "favicon.ico",
